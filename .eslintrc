@@ -1,0 +1,9 @@
+{
+  "extends": ["react-app", "prettier"],
+  "rules": {
+    "no-console": "warn",
+    "no-empty": "warn",
+    "getter-return": "warn",
+    "require-await": "warn"
+  }
+}
