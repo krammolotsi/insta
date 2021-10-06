@@ -20,6 +20,7 @@ function Login() {
     try {
       await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
       history.push(ROUTES.DASHBOARD);
+      /// console.log('Login succesful');
     } catch (error) {
       setEmailAddress('');
       setPassword('');

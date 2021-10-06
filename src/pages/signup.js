@@ -26,17 +26,17 @@ function SignUp() {
     //if there is no user then go ahead and register
     if (!usernameExists) {
       try {
+        //create user on firebase for auth
         const createdUserResult = await firebase
           .auth()
           .createUserWithEmailAndPassword(emailAddress, password);
 
-        // authentication
-        // -> emailAddress & password & username (displayName)
+        //update the created user profile display name
         await createdUserResult.user.updateProfile({
           displayName: username,
         });
 
-        // firebase user collection (create a document)
+        // add to firebase user collection (create a document)
         await firebase
           .firestore()
           .collection('users')
