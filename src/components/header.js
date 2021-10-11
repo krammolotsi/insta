@@ -3,12 +3,12 @@ import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import UserContext from '../context/user';
 import * as ROUTES from '../constants/routes';
-import { DEFAULT_IMAGE_PATH } from '../constants/paths';
-import useUser from '../hooks/use-user';
+//import { DEFAULT_IMAGE_PATH } from '../constants/paths';
+//import useUser from '../hooks/use-user';
 
 export default function Header() {
   const { user: loggedInUser } = useContext(UserContext);
-  const { user } = useUser(loggedInUser?.uid);
+  // const { user } = useUser(loggedInUser?.uid);
   const { firebase } = useContext(FirebaseContext);
   const history = useHistory();
 
@@ -16,13 +16,7 @@ export default function Header() {
     <header className="h-16 bg-white border-b border-gray-primary mb-8">
       <div className="container mx-auto max-w-screen-lg h-full">
         <div className="flex justify-between h-full">
-          <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
-            <h1 className="flex justify-center w-full">
-              <Link to={ROUTES.DASHBOARD} aria-label="Instagram logo">
-                <img src="/images/logo.png" alt="Instagram" className="mt-2 w-6/12" />
-              </Link>
-            </h1>
-          </div>
+          <div className="text-gray-700 text-center flex items-center align-items cursor-pointer"></div>
           <div className="text-gray-700 text-center flex items-center align-items">
             {loggedInUser ? (
               <>
@@ -72,7 +66,7 @@ export default function Header() {
                     />
                   </svg>
                 </button>
-                {user && (
+                {/* {user && (
                   <div className="flex items-center cursor-pointer">
                     <Link to={`/p/${user?.username}`}>
                       <img
@@ -85,7 +79,7 @@ export default function Header() {
                       />
                     </Link>
                   </div>
-                )}
+                )} */}
               </>
             ) : (
               <>

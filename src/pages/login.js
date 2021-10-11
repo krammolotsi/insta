@@ -4,7 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import { useContext } from 'react';
 import * as ROUTES from '../constants/routes';
-
+import { star } from 'ionicons/icons';
+import '../styles/ionic.css';
 function Login() {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
@@ -73,7 +74,7 @@ function Login() {
               disabled={isInvalid}
               type="submit"
               className={`bg-blue-medium text-white w-full rounded h-8 font-bold
-            ${isInvalid && 'opacity-50'}`}
+          ${isInvalid && 'opacity-50'}`}
             >
               Login
             </button>
